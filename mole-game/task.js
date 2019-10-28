@@ -6,19 +6,21 @@ for (let i=1; i<10; i++) {
     let hole = getHole(i);
 	hole.onclick = function () {
 		if (hole.className.includes ('hole_has-mole')) {
+			x++;
 			document.getElementById('dead').textContent = x;
-		    x++;
-		    if (x === 10) {
-		    	x = 0;
-		    	alert('Победа!')
+			if (x === 10) {
+				alert('Победа!')
+				x = 0;
 		    }
 		} else {
-		document.getElementById('lost').textContent = y;
-		y++;
-		if (y === 5) {
-			y = 0;
-			alert('Game over')
-		}
+			y++;
+			document.getElementById('lost').textContent = y;
+			if (y === 5) {
+				alert('Game over')
+				y = 0;
+			}
 		}
 	}
 }
+
+ 		    
