@@ -30,43 +30,20 @@ prev.onclick = function () {
 	dotsArray[i].classList.add('slider__dot_active');
 };
 
-dotsArray[0].onclick = function() {
+let dot = dotsArray[i];
+let dotNumber = indexOf(dot);
+
+function nextDot (dotNumber) {
 	let dotActive = document.querySelector('div.slider__dot_active');
 	let imgActive = document.querySelector('div.slider__item_active');
     dotActive.classList.remove('slider__dot_active');
-    dotsArray[0].classList.add('slider__dot_active');
+    dotsArray[dotNumber].classList.add('slider__dot_active');
     imgActive.classList.remove('slider__item_active');
-    arr[0].classList.add('slider__item_active');
+    arr[dotNumber].classList.add('slider__item_active');
 }
-dotsArray[1].onclick = function() {
-	let dotActive = document.querySelector('div.slider__dot_active');
-	let imgActive = document.querySelector('div.slider__item_active');
-	dotActive.classList.remove('slider__dot_active'); 
-	dotsArray[1].classList.add('slider__dot_active');
-	imgActive.classList.remove('slider__item_active');
-	arr[1].classList.add('slider__item_active');
-}
-dotsArray[2].onclick = function() {
-	let dotActive = document.querySelector('div.slider__dot_active');
-	let imgActive = document.querySelector('div.slider__item_active');
-	dotActive.classList.remove('slider__dot_active');
-	dotsArray[2].classList.add('slider__dot_active');
-	imgActive.classList.remove('slider__item_active');
-	arr[2].classList.add('slider__item_active');
-}
-dotsArray[3].onclick = function() {
-	let dotActive = document.querySelector('div.slider__dot_active');
-	let imgActive = document.querySelector('div.slider__item_active');
-	dotActive.classList.remove('slider__dot_active');
-	dotsArray[3].classList.add('slider__dot_active');
-	imgActive.classList.remove('slider__item_active');
-    arr[3].classList.add('slider__item_active');
-}
-dotsArray[4].onclick = function() {
-	let dotActive = document.querySelector('div.slider__dot_active');
-	let imgActive = document.querySelector('div.slider__item_active');
-	dotActive.classList.remove('slider__dot_active');
-	dotsArray[4].classList.add('slider__dot_active');
-	imgActive.classList.remove('slider__item_active');
-    arr[4].classList.add('slider__item_active');
-}
+
+
+dot.onclick = nextDot;
+	
+
+
