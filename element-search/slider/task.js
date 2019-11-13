@@ -30,20 +30,24 @@ prev.onclick = function () {
 	dotsArray[i].classList.add('slider__dot_active');
 };
 
-let dot = dotsArray[i];
-let dotNumber = indexOf(dot);
 
-function nextDot (dotNumber) {
-	let dotActive = document.querySelector('div.slider__dot_active');
-	let imgActive = document.querySelector('div.slider__item_active');
-    dotActive.classList.remove('slider__dot_active');
-    dotsArray[dotNumber].classList.add('slider__dot_active');
-    imgActive.classList.remove('slider__item_active');
-    arr[dotNumber].classList.add('slider__item_active');
+for (let i=0; i<dotsArray.length; i++) {
+	dotsArray[i].onclick = function () {
+		nextDot(i);
+	}
 }
 
 
-dot.onclick = nextDot;
-	
+function nextDot(i) {
+	let dotActive = document.querySelector('div.slider__dot_active');
+	let imgActive = document.querySelector('div.slider__item_active');
+	dotActive.classList.remove('slider__dot_active');
+	dotsArray[i].classList.add('slider__dot_active');
+	imgActive.classList.remove('slider__item_active');
+	arr[i].classList.add('slider__item_active');
+}
+
+
+
 
 
